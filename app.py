@@ -1,0 +1,15 @@
+import streamlit as st
+from agent import agent
+
+st.set_page_config(page_title="Agentic RAG Mini", layout="centered")
+
+st.title("📄 Agentic Document Assistant")
+st.caption("Answers only when confident — otherwise asks for clarification")
+
+query = st.text_input("Ask a question about the document")
+
+if query:
+    with st.spinner("Thinking..."):
+        response = agent.chat(query)
+        st.markdown("### 🤖 Agent Response")
+        st.write(response)
