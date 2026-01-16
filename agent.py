@@ -6,7 +6,7 @@ from config import MODEL_NAME
 
 index = build_index()
 
-llm = OpenAI(model=MODEL_NAME)
+llm = OpenAI(model=MODEL_NAME,api_key=os.environ["OPENAI_API_KEY"])
 
 query_tool = QueryEngineTool.from_defaults(
     index.as_query_engine(similarity_top_k=3),
