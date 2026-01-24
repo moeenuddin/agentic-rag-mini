@@ -15,7 +15,7 @@ query_tool = QueryEngineTool.from_defaults(
     description="Search course documents for relevant information"
 )
 
-agent = ReActAgent.from_tools(
+agent = ReActAgent(
     tools=[query_tool],
     llm=llm,
     system_prompt="""
