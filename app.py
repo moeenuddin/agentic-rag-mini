@@ -10,6 +10,6 @@ query = st.text_input("Ask a question about the document")
 
 if query:
     with st.spinner("Thinking..."):
-        response = agent.chat(query)
+        response = agent.run(query)
         st.markdown("### 🤖 Agent Response")
         st.write(response)
