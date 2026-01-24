@@ -3,6 +3,7 @@ from llama_index.core.tools import QueryEngineTool
 from llama_index.llms.openai import OpenAI
 from ingest import build_index
 from config import MODEL_NAME
+import os
 
 index = build_index()
 
